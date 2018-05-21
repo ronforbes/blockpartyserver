@@ -6,7 +6,7 @@ const socketIOServer = require('socket.io')(httpServer);
 const PORT = process.env.PORT || 1337;
 
 expressApp.get('/', function(request, response) {
-  response.send('<h1>Block Party Server</h1>');
+  response.send('<h1>Block Party Server!</h1>');
 });
 
 var players = [];
