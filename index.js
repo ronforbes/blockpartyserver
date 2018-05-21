@@ -3,6 +3,7 @@ const expressApp = express();
 const http = require('http');
 const httpServer = http.Server(expressApp);
 const socketIOServer = require('socket.io')(httpServer);
+const HOST = process.env.HOST || "localhost";
 const PORT = process.env.PORT || 1337;
 
 expressApp.get('/', function(request, response) {
@@ -47,5 +48,5 @@ socketIOServer.on('connection', function(socket) {
 });
 
 httpServer.listen(PORT, function() {
-  console.log(`Listening on ${ PORT }`);
+  console.log(`Listening on ${ HOST }:${ PORT }`);
 });
