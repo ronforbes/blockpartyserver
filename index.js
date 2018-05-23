@@ -15,8 +15,8 @@ var states = {
     outOfGame: "outOfGame"
 }
 var stateDurations = {
-    inGame: 15,
-    outOfGame: 15,
+    inGame: 120,
+    outOfGame: 45,
 }
 var state = states.inGame;
 var stateDuration = stateDurations.inGame;
@@ -96,6 +96,7 @@ setInterval(function() {
     results.forEach(function(result) {
       console.log('{ name: ' + result.name + ', score: ' + result.score + ' },');
     });
+    console.log('}');
     socketIOServer.emit('game results', {
         results: results
     });
